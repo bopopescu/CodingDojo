@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Your Info</title>
+        {% load staticfiles %}
+
+        <link rel="stylesheet" href="{% static 'survey/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+    </head>
+    <body>
+    <h3>Thanks for submitting this form! You have submitted this form {{request.session.number}} times</h3>
+    <div class="thisisform">
+        <h3>Submitted Info</h3>
+        <p>Name: {{request.session.name}}</p>
+        <br>
+        <p>Dojo Location: {{request.session.location}}</p>
+        <p>Favorite Language: {{request.session.language}}</p>
+        <br>
+        <p>Comment: {{request.session.comment}}</p>
+        <br>
+        <a id="goback" href="/">Go Back</a>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+    font-family: "Helvetica", Arial, sans-serif;
+}
+
+.thisisform{
+    border: 2px solid black;
+    padding: 20px;
+}
+
+p{
+    display: inline-block;
+    margin: 10px;
+}
+
+input {
+    display: inline-block;
+    margin: 10px;
+
+
+
+
+}
+
+input[type='submit']{
+    background-color: #BFDDE0;
+    border: none;
+    padding: 10px;
+}
+
+a#goback{
+    background-color: #BFDDE0;
+    border: none;
+    padding: 10px;
+}
+
+#submit{
+    vertical-align: right;
+    text-align: right;
+}

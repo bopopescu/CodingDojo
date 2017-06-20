@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+            {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'ninjas/css/styles.css' %}">
+
+</head>
+<body>
+    {% if ninja_color %}
+
+        <!--<img src=/static/{{ninja_color}}>-->
+        <img src="{% static 'ninjas/images/'|add:ninja_color|add:'.jpg' %}">
+
+    {% endif %}
+
+</body>
+</html>

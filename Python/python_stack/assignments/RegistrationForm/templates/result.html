@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Your Info</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+    <div class="thisisform">
+        <h3>Submitted Info</h3>
+        <p>First Name: {{firstname}}</p>
+        <br>
+        <p>Last Name: {{lastname}}</p>
+        <br>
+        <p>Thanks for submitting your information!</p>
+        <a id="goback" href="/">Go Back</a>
+    </div>
+    </body>
+</html>

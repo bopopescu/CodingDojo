@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: auto;
+    font-size: 1.3em;
+}
+
+.headerforwall{
+    padding: 10px;
+    border: 2px solid darkcyan;
+    background: lightseagreen;
+    margin-bottom: 20px;
+}
+
+.content{
+    width: 700px;
+    margin: auto;
+    border: 1px solid darkcyan;
+
+}
+
+.messages, .header, .message{
+    text-align: center;
+}
+
+label{
+    padding: 10px;
+    margin:10px;
+    display: block;
+}
+
+#formessage input[type=text]{
+    padding: 10px;
+    border: none;
+    background: lightseagreen;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    width: 500px;
+}
+
+input[type=submit]{
+    padding: 10px;
+    border: none;
+    background: lightseagreen;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: 30px;
+}
+
+.messages, .listofmessages{
+    padding: 15px;
+    border: 2px solid darkcyan;
+    margin: 10px;
+
+}
+
+.headerforwall h1{
+    display: inline-block;
+}
+
+.welcomeforwall{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    padding: 10px;
+    padding-top: 15px;
+}
+
+.content{
+    padding: 15px;
+}
+
+.comments{
+    margin-left: 40px;
+    border: 1px solid lightblue;
+    padding: 10px;
+}
+
+input[type=text]{
+    width: 300px;
+    margin: 30px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function check_palindrome(str){
+		for(var i = 0; i<str.length/2; i++){
+			if(str[i] != str[str.length-1-i]){
+				//console.log(str[i]) 
+				//console.log(str[str.length-1-i]) 
+				return false
+			}
+		}
+		return true
+	}
+	string = "racecar"
+	check_palindrome(string)
+	function check_palindromenonstrict(str){
+		var arr =  str.split(" "); //removes space
+		var str1 = arr.join(""); 
+		var str2 = "";
+		for(var i = 0; i < str.length; i++){
+			var code =  str1.charCodeAt(i)
+			if(code > 96 && code < 123){
+				str2 += str[i]
+			}
+			else if( code > 64 && code < 91){
+				str2 += str[i].toLowerCase();
+			}
+		}
+		return check_palindrome(str2)
+
+	}
+
+	string1 = "what up, daddy-o?"
+	console.log(check_palindromenonstrict(string1))
+	string2 = "I did, did I, Madam I’m Adam, racecar"
+	console.log(check_palindromenonstrict(string2))	
+
+	</script>
+</body>
+</html>

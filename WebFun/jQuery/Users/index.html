@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: auto;
+      width: 500px;
+    }
+    img{
+      margin-bottom: 5px;
+    }
+    table, th, td tr{
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+	
+
+</head>
+<body>
+<script>
+
+  $(document).ready(function(){
+      
+     $('button').on("click", function() {
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        var email = $("#email").val();
+        var contact = $("#contact").val();
+        $("#tbod").append("<tr><td>"+fname+"</td><td>"+lname+"</td><td>"+email+"</td><td>"+contact+"</td></tr>");
+      });
+
+
+      
+
+
+  })
+</script>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Address</th>
+        <th>Contact #</th>
+      </tr>
+      <tbody id='tbod'>
+        
+      </tbody>
+    </table>
+    <form>
+      <h2>Add User</h2>
+      <hr>
+      First Name: <input type="text" name="fname" id="fname" >
+      <br>
+      Last Name: <input type="text" name="lname" id="lname">
+      <br>
+      Email Address: <input type="email" name="email" id="email" >
+      <br>
+      Contact No.: <input type="tel" name="contact" id="contact">
+      <br>
+      <button type="button">Submit</button>
+    </form>
+
+    
+
+</body>
+</html>
+

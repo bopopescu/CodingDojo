@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	function check_palindrome(str){
+		for(var i = 0; i<str.length/2; i++){
+			if(str[i] != str[str.length-1-i]){
+				console.log(str[i]) 
+				console.log(str[str.length-1-i]) 
+				return false
+			}
+		}
+		return true
+	}
+	string = "racecar"
+	check_palindrome(string)
+		// function longestPalindrome(str){
+		// 	if()
+
+		// }
+	</script>
+</body>
+</html>

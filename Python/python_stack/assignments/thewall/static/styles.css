@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: auto;
+    width: 500px;
+    font-size: 1.3em;
+}
+
+.header{
+    padding: 10px;
+    border: 2px solid darkcyan;
+    background: lightseagreen;
+}
+
+
+.messages, .header{
+    text-align: center;
+}
+
+label{
+    padding: 10px;
+    margin:10px;
+    display: block;
+}
+
+input[type=submit]{
+    padding: 10px;
+    border: none;
+    background: lightseagreen;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.messages{
+    padding: 15px;
+    border: 2px solid darkcyan;
+
+}

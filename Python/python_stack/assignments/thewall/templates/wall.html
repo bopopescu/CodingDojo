@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='stylesforwall.css') }}">
+</head>
+<body>
+    <div class="headerforwall">
+        <h1>CodingDojo Wall</h1>
+        <div class="welcomeforwall">
+            <p>Welcome {{first_name}} {{last_name}} <a href="/logoff">log off</a></p>
+
+        </div>
+    </div>
+    <div class="content">
+
+
+{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+    <h3>Post a message</h3>
+     <form action='/postmessage' method = "post">
+        <input type="text" name="formessage" id="formessage">
+        <input type="submit" value="Post a Message">
+    </form>
+        <!--{{individualmessage}}-->
+        <!--<p>fdfd</p>-->
+        <!--{{individalcomment}}-->
+
+    {% for message in individualmessage | reverse: %}
+        <p>{{ message['message'] }}</p>
+        <p>{{message['first_name']}}</p>
+            <div class="comments">
+            {% for comment in individalcomment | reverse: %}
+                <!--<p>{{comment}}</p>-->
+                <!--<p>{{message['id']}}</p>-->
+                <!--<p>{{comment['messages_id']}}</p>-->
+                <!--<p>{{comment['first_name']}}</p>-->
+              {% if comment['messages_id'] == message['id']: %}
+                  <div class="comments">
+                    <p>{{ comment['comment'] }}</p>
+                    <p>{{ comment['first_name'] }}</p>
+                  </div>
+               {% endif %}
+            {% endfor %}
+            </div>
+        <form action='/postcomment' method = "post">
+            <input type="text" name="forcomment" id="forcomment">
+            <input type="hidden" name="messageid" value="{{ message['id'] }}">
+            <input type="submit" value="Post a Comment">
+        </form>
+
+    {% endfor %}
+
+
+
+
+            <!--{% for message in allmessages | reverse: %}-->
+        <!--<p>{{ message['updated_at'] }}</p>-->
+        <!--<p>{{ message['message'] }}</p>-->
+
+            <!--<div class="comments">-->
+            <!--{% for comment in allcomments | reverse: %}-->
+              <!--{% if message['id'] == comment['messages_id']: %}-->
+                <!--<p>{{ comment['updated_at'] }}</p>-->
+                <!--<p>{{ comment['comment'] }}</p>-->
+               <!--{% endif %}-->
+            <!--{% endfor %}-->
+            <!--</div>-->
+        <!--<form action='/postcomment' method = "post">-->
+            <!--<input type="text" name="forcomment" id="forcomment">-->
+            <!--<input type="hidden" name="messageid" value="{{ message['id'] }}">-->
+            <!--<input type="submit" value="Post a Comment">-->
+        <!--</form>-->
+
+    <!--{% endfor %}-->
+    </div>
+
+</body>
+</html>

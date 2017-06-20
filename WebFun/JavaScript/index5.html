@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Range Print</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//Create a function that can take a start point, end point, and skip amount, to print all numbers in the range.
+		function printRange(first, last, ind){
+			if( ind === undefined){
+				ind = 1;
+			}
+			if( last === undefined){
+				last = first;
+				first = 0;
+				ind = 1;
+			}
+			var i = first;
+			while(i < last){
+				console.log(i);
+				i = i+ind;
+			}
+		}
+
+		printRange(2,10,2);
+		printRange(4, 8);
+		printRange(4);
+
+		
+
+
+	</script>
+</body>
+</html>

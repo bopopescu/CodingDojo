@@ -1,0 +1,149 @@
+.header img{
+	width: 300px;
+}
+
+body{
+	
+	
+	
+	font-family: "Helvetica"
+}
+
+.wrapper{
+	margin: auto;
+	background-color: rgb(38,60,93);
+	width: 970px;
+}
+
+.smaller_wrapper{
+
+}
+.accessandsearch p{
+	color: white;
+	font-size: 0.9em;
+	margin-left: 40px;
+}
+
+.accessandsearch a{
+	color: yellow;
+}
+
+.accessandsearch,  .header > img{
+	display: inline-block;
+}
+
+.accessandsearch{
+	margin-left: 400px;
+	margin-bottom: 30px;
+
+}
+
+.searchbar{
+	background: #3a3838;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 3px 3px 3px black;
+}
+
+.searchbar input{
+	text-align: center;
+}
+.searchbar button{
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #232a75;
+	color: white;
+
+}
+
+.navbar{
+	box-shadow: 5px 5px 5px black;
+	color: white;
+	background-color: #3d6084;
+	width: 700px;
+	margin: auto;
+	padding: 15px;
+	border-radius: 15px;
+	text-decoration: none;
+}
+.navbar a{
+	color: white;
+	text-decoration: none;
+}
+.navbar h3{
+	display: inline;
+	padding: 5px 15px;
+	font-weight: 100;
+	color: white;
+}
+
+.lists{
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+}
+.lists li a{
+	color: white;
+}
+
+.lists li{
+	text-align: center;
+	list-style-type: none;
+}
+
+.someinfo{
+	color: white;
+	display: inline-block;
+	width: 700px;
+}
+
+.poem p{
+	color: #a99b2a;
+	text-align: center;
+	font-style: italic;
+}
+
+#zen_of_poem {
+	color: white;
+	font-style: normal;
+}
+
+.guide{
+	background: white;
+	margin: auto;
+	text-align: center;
+	
+}
+
+.getting_started, .applications{
+	display: inline-block;
+	width: 400px;
+	border-top: 5px solid lightblue;
+	margin: 10px;
+	text-align: center;
+}
+
+.footer{
+	margin: auto;
+	text-align: center;
+	padding-bottom: 5px; 
+	color:lightblue;
+}
+
+.footer p{
+	font-size: .5em;
+
+	
+}
+
+.footer a{
+	color: lightblue;
+}
+
+.footer h4{
+	display: inline-block;
+	font-weight: 100;
+	margin: 20px 15px;
+
+}
+

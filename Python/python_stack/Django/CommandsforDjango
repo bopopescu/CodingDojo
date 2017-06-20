@@ -1,0 +1,101 @@
+Last login: Fri Jun 16 14:54:15 on ttys003
+You have new mail.
+Sushmas-MacBook-Pro:~ sushmamangalapally$ cd Documents/CodingDojo/Python
+Sushmas-MacBook-Pro:Python sushmamangalapally$ ls
+OOP				python_fund
+database			python_stack
+demo.py				string_and_lists.py
+hello_world.py			textcommandsfortwittersql.rtf
+Sushmas-MacBook-Pro:Python sushmamangalapally$ cd python_stack/
+Sushmas-MacBook-Pro:python_stack sushmamangalapally$ ls
+Django			counter 2.zip		myEnvironments
+advanced_routing	counter.zip		python_OOP
+assignments		flask_MySQL		python_fundamentals
+assignments.zip		flask_fundamentals
+counter			form_test
+Sushmas-MacBook-Pro:python_stack sushmamangalapally$ cd myEnvironments/
+Sushmas-MacBook-Pro:myEnvironments sushmamangalapally$ source djangoEnv/bin/activate
+(djangoEnv) Sushmas-MacBook-Pro:myEnvironments sushmamangalapally$ cd ..
+(djangoEnv) Sushmas-MacBook-Pro:python_stack sushmamangalapally$ ls
+Django			counter 2.zip		myEnvironments
+advanced_routing	counter.zip		python_OOP
+assignments		flask_MySQL		python_fundamentals
+assignments.zip		flask_fundamentals
+counter			form_test
+(djangoEnv) Sushmas-MacBook-Pro:python_stack sushmamangalapally$ cd Django/
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ django-admin startproject HelloWorld
+CommandError: '/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/Django/HelloWorld' already exists
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+HelloWorld	main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ django-admin startproject HelloWorld
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+HelloWorld	main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+HelloWorld	main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ cd HelloWorld/
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+HelloWorld	manage.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ cd ..
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+HelloWorld	main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ cd HelloWorld/
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ mkdir apps
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+HelloWorld	apps		manage.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ cd apps
+(djangoEnv) Sushmas-MacBook-Pro:apps sushmamangalapally$ touch __init__.py
+(djangoEnv) Sushmas-MacBook-Pro:apps sushmamangalapally$ python ../manage.py startapp hello
+(djangoEnv) Sushmas-MacBook-Pro:apps sushmamangalapally$ ls
+__init__.py	hello
+(djangoEnv) Sushmas-MacBook-Pro:apps sushmamangalapally$ cd ..
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+HelloWorld	apps		manage.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+HelloWorld	apps		manage.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ cd HelloWorld/
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+__init__.py	settings.py	urls.py
+__init__.pyc	settings.pyc	wsgi.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ cd ..
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ cd ..
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ ls
+HelloWorld	main
+(djangoEnv) Sushmas-MacBook-Pro:Django sushmamangalapally$ cd HelloWorld/
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ ls
+HelloWorld	apps		manage.py
+(djangoEnv) Sushmas-MacBook-Pro:HelloWorld sushmamangalapally$ python manage.py runserver
+Unhandled exception in thread started by <function wrapper at 0x1101e96e0>
+Traceback (most recent call last):
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/utils/autoreload.py", line 226, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/core/management/commands/runserver.py", line 113, in inner_run
+    autoreload.raise_last_exception()
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/utils/autoreload.py", line 249, in raise_last_exception
+    six.reraise(*_exception)
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/utils/autoreload.py", line 226, in wrapper
+    fn(*args, **kwargs)
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/__init__.py", line 27, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/registry.py", line 85, in populate
+    app_config = AppConfig.create(entry)
+  File "/Users/sushmamangalapally/Documents/CodingDojo/Python/python_stack/myEnvironments/djangoEnv/lib/python2.7/site-packages/django/apps/config.py", line 116, in create
+    mod = import_module(mod_path)
+  File "/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+ImportError: No module named hellodjango.contrib
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+June 16, 2017 - 22:18:02
+Django version 1.10, using settings 'HelloWorld.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+**************************************************
+[16/Jun/2017 22:18:17] "GET / HTTP/1.1" 200 148
+

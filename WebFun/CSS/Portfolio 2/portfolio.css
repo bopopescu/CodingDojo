@@ -1,0 +1,167 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+.wrapper{
+ width: 950px;
+ background-color: black;
+ margin: 0px auto;
+ padding: 20px;
+ font-family: "Helvitica", Arial, sans-serif;
+ color: white;
+ height: auto;
+}
+
+#header img{
+	max-width: 180px;
+	display: inline-block;
+}
+
+#header p{
+	color: white;
+	margin-left: 600px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1em;
+	font-weight: bold;
+}
+.content{
+	width: 950px;
+}
+.navbar{
+	background-color: #474242;
+	padding: 10px;
+	margin: 10px 0 0 0;
+}
+
+.navbar a{
+	text-decoration: none;
+	color: silver;
+	margin: 0 10px;
+}
+
+.main img{
+	max-width: 100%;
+}
+
+.icons_and_info{
+	background-color: black;
+}
+
+.icon{
+	display: inline-block;
+	/* width: 250px; */
+	margin: 8px;
+	/* padding: 20px 3px; */
+}
+
+.icon p, .icon h3{
+	font-size: 0.8em;
+}
+
+.icon h3{
+	color: orange;
+}
+.contentinicon{
+	display: inline-block;
+	width: 150px;
+	height: 100px;
+	margin: 5px;
+}
+
+.ad{
+	background-image: url(black-diagonal-lines.jpg);
+	padding: 25px 15px;
+
+}
+
+.ad h1, .ad p{
+	font-weight: 100;
+	display: inline-block;
+	width: 80%;
+}
+
+.ad button{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 30px;
+	padding: 10px;
+	background-color: orange;
+	font-size: 1em;
+	border-style: none;
+	border-radius: 10px;
+	color: white;
+
+}
+
+.icon img{
+	display: inline-block;
+	/* margin-right: 300px; */
+}
+
+.portf{
+	display: inline-block;
+}
+.morecontent{
+	padding: 10px;
+	margin: 10px 0;
+}
+.morecontent a{
+	text-decoration: none;
+	font-style: italic;
+	color: orange;
+	display: inline-block;
+	font-size: 0.7em;
+	margin-left: 700px;
+}
+
+.morecontent h2{
+	display: inline-block;
+	font-weight: 100;
+}
+
+.portfolios{
+	margin-top: 10px;
+}
+.portf img{
+	border: 4px solid grey;
+	/* margin: 0 4px; */
+	width: 194px;
+	height: 130px;
+}
+
+.portf h3{
+	font-weight: 100;
+	color: orange;
+}
+
+.portinfo{
+	display: inline-block;
+	width: 100%;
+}
+
+.portf{
+	/* background-color: darkred; */
+	margin: 10px;
+	width: 21.7%;
+}
+
+.portf p{
+	margin-top: 8px;
+	font-size: 0.7em;
+}
+
+a#tothetop{
+
+    margin-left: 800px;
+    vertical-align: bottom;
+    margin-top: 30px;
+    font-style: none;
+    font-style: normal;
+    color: silver;
+    font-size: 0.7em;
+    vertical-align: bottom;
+    text-decoration: none;
+}

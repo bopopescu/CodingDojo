@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Card</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: auto;
+      width: 900px;
+      padding: 20px;
+    }
+    img{
+      margin-bottom: 5px;
+    }
+    form{
+      display: inline-block;
+      width: 400px;
+    }
+    div{
+      
+      padding: 5px;
+     /* visibility: hidden; */
+    }
+    .hide{
+      display: none;
+      border: 1px solid black;
+    }
+
+    .names_info{
+      width: 200px;
+      border: 1px solid black;
+      display: inline-block;
+    }
+
+    .cards{
+      padding: 20px;
+    }
+
+
+  </style>
+	
+
+</head>
+<body>
+<script>
+
+  $(document).ready(function(){
+     $('button').on("click", function() {
+        //$("div").css("visibility", "visible");
+        var fname = $("#fname").val();
+        var lname = $("#lname").val();
+        console.log(fname);
+        var description = $("#desc").val();
+        $(".names_info").append("<div class='cards'><h1>"+fname+" "+lname+"</h1><br><p>Click for description!</p><span class='hide'>"+description+"</span></div>");
+        $()
+      });
+
+
+     $('.names_info').on("click", '.cards', function(){
+          $(this).children("h1, p").css("display", "none");
+          //using children to grab children of .cards 
+          $(this).children(".hide").css("display", "block");
+          //using children to grab children of .cards 
+     });
+
+      
+
+
+  })
+</script>
+    <form>
+      First Name: <input type="text" name="fname" id="fname" >
+      <br>
+      Last Name: <input type="text" name="lname" id="lname">
+      <br>
+      Description: <textarea name="desc" id="desc" rows="4" cols="50"></textarea>
+      <br>
+      <button type="button">Add User</button>
+    </form>
+
+    <div class="names_info">
+    </div>
+
+    
+
+</body>
+</html>
+

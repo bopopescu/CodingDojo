@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>CodingDojo Wall</h1>
+    </div>
+    <div class="messages">
+        <h2>Login</h2>
+        {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        <form action='/login', method='POST'>
+            <label for="emailforlogin">Email:<input type="text" name="emailforlogin" id="emailforlogin"></label>
+
+            <label for="passwordforlogin">Password:<input type="password" name="passwordforlogin" id="passwordforlogin"></label>
+
+            <input type="submit" value="Submit">
+      </form>
+        <hr>
+        <h2>Register</h2>
+        <form action='/toregister' method='POST'>
+            <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label>
+
+            <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label>
+
+            <label for="email">Email:<input type="text" name="email" id="email"></label>
+
+            <label for="password">Password:<input type="password" name="password" id="password"></label>
+
+            <label for="passwordconfirm">Password Confirmation:<input type="password" name="passwordconfirm" id="passwordconfirm"></label>
+
+            <input type="submit" value="Submit">
+      </form>
+        </div>
+</body>
+</html>

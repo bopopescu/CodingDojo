@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    <p>Take a guess!</p>
+    <button><a href="/playagain">Play Again</a></button>
+    <p>{{say}}</p>
+    <p>Guess: {{request.form['getcount']}}</p>
+    <p>This is actual number: {{session['rightnumber']}}</p>
+    <form action="/guess" method="POST">
+        <input type="text" name="getcount">
+        <input type="submit" name="submit">
+    </form>
+
+
+
+
+</body>
+</html>

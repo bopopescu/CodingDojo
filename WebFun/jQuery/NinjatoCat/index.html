@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: auto;
+      width: 100px;
+    }
+    img{
+      margin-bottom: 5px;
+    }
+  </style>
+	
+
+</head>
+<body>
+<script>
+  var HTMLstring = "";
+  for(var i = 0; i < 5; i++){
+      HTMLstring += '<img src="img/cat'+i+'.png" data-alt-src="img/ninja'+i+'.png" >';
+  }
+  $(document).ready(function(){
+     $(".content").append(HTMLstring);
+     $('img').click(function() {
+        console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+      });
+
+      $('img').click(function(){
+          $( this ).attr('src', $(this).attr('data-alt-src'));
+      });
+
+      
+
+
+  })
+</script>
+    <h3>jQuery - assignment 2</h3>
+    <div class="content">
+      
+    </div>
+
+    
+
+</body>
+</html>
+

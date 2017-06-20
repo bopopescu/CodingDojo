@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      margin: auto;
+      width: 900px;
+    }
+    img{
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      margin: 5px;
+    }
+  </style>
+	
+
+</head>
+<body>
+<script>
+  var HTMLstring = "";
+  for(var i = 0; i < 8; i++){
+      HTMLstring += '<img src="http://www.how-to-draw-funny-cartoons.com/image-files/cartoon-ninja-8.gif">';
+  }
+  $(document).ready(function(){
+     $(".content").append(HTMLstring)
+      $('img').click(function(){
+          $(this).hide("1000");
+      });
+
+      $(".restore").click(function(){
+        $('img').show();
+      })
+      
+
+
+  })
+</script>
+    <h3>jQuery - assignment 2</h3>
+    <div class="content">
+      
+    </div>
+
+    
+    <button class="restore">Restore</button>
+
+
+</body>
+</html>
+

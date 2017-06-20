@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h4{
+            /*color: {% if count%2 == 0 %} red {% else %} blue {% endif %} */
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <p>{{session['count']}} times</p>
+
+        <button><a href="/incrementbyTwo">+2</a></button>
+
+
+        <button><a href="/reset">Reset</a></button>
+
+</body>
+</html>

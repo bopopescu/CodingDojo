@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landscape Image</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'image/css/styles.css' %}">
+
+</head>
+<body>
+    <h3>Your Random Image of the day:</h3>
+    <img src="{% static 'images/'|add:thisimage|add:'.jpg' %}" width="600px" >
+
+    <img
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery demo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style type="text/css">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    margin: auto;
+    width: 970px;
+  }
+    .blue{
+      color: blue;
+    }
+    .red{
+      color: red;
+    }
+  </style>
+	
+
+</head>
+<body>
+<script>
+  $(document).ready(function(){
+      $('#change').click(function(){
+          $('#myParagraph').text('see how I .text() works as a setter!');
+      });
+
+      $('#hide').click(function(){
+        $('h1').hide();
+      });
+
+      $('#show').click(function(){
+        $('h1').show();
+      });
+
+      $('.toggle').click(function(){
+        $('.lorem').toggle();
+      });
+
+      $('.slideUp').click(function(){
+        $('img').toggle();
+      });
+
+      $('.slideDown').click(function(){
+        $('img').toggle();
+      });
+
+      $('.toggle').click(function(){
+        $('h4').slideToggle();
+      });
+
+      $('.fadein').click(function(){
+        $( "#one" ).fadeIn( "slow" );
+      });
+
+      $('.fadeout').click(function(){
+        $( "#one" ).fadeOut( "slow" );
+      });
+
+      $( "#color" ).addClass( "blue" );
+     
+
+      $('.changecolor').click(function(){
+        $( "#color" ).append( "<h5>Phone</h5>" );
+      });
+
+      $('#beluga').hover(function(){
+        $( "#beluga" ).before( "<h3>Whales</h3>" );
+      }, 
+        function(){
+        $( "#beluga" ).after( "<img src='https://vignette1.wikia.nocookie.net/beastwarstransformers/images/2/2c/Beluga_Whale.jpg/revision/latest?cb=20160602101711'>" );
+      });
+
+      $( ".blue" ).html( "<span class='blue'>Hello <b>Again</b></span>" );
+
+      $(".parabutton").click(function(){
+        $(".paragraph").attr("color","red");
+      });
+
+      $(".changename").click(function(){
+        $("input").val("Sushma");
+      });
+
+      $(".reveal").click(function(){
+        $( ".mystery" ).text( "jQuery is cool!" );
+      });
+      $("#colour").data("test", {first: "blue!"});
+      $("span:first").text($("#colour").data("test").first);
+
+      $(".changesize").click(function(){
+        $( ".whoa" ).attr( "width","500");
+      });
+
+      
+
+
+      
+
+
+  })
+</script>
+    <h3>Change with .text() and .click()</h3>
+    <p id='myParagraph'> This is my paragraph! </p>
+    <button id="change"> Click me to change the paragraph! </button>
+    <hr>
+    <h3>Change with .hide(), .show() and .click()</h3>
+    <button id="hide">Hide Below</button>
+    <button id="show">Show Me Again!</button>
+    <h1>Hey! Hello! Hi!</h1>
+    <hr>
+    <p class="lorem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <p class="toggle">Click me!</p>
+    <hr>
+    
+    <img src="http://cdn.akc.org/corgi-3.jpg">
+    <button class="slideUp">Slide Up</button>
+    <button class="slideDown">Slide Down</button>
+
+    <hr>
+
+    <h4>Low-set, strong, sturdily built and active, giving an impression of substance and stamina in a small space. Should not be so low and heavy-boned as to appear coarse or overdone, nor so light-boned as to appear racy. Outlook bold, but kindly. Expression intelligent and interested. Never shy nor vicious.
+    </h4>
+    <button class="toggle">Toggle!</button>
+    <hr>
+    <div id="one" style="background: red; display: none; width: 100px; height: 100px;"></div>
+    <p class="fadein">Click me for Fade In</p>
+    <p class="fadeout">Click me for Fade Out</p>
+
+    <p id="color">Click for more words</p>
+    <button class="changecolor">Add words</button>
+    <hr>
+
+    <p id="beluga">Beluga Whales</p>
+
+    <hr>
+    <div class="blue">Blue</div>
+    <hr>
+    <div class="paragraph">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+    <button class="parabutton">Click Me!</button>
+    <hr>
+    Name:<input type="text" value="Tom">
+    <button class="changename">Change Name!</button>
+    <hr>
+    <p class="mystery"></p>
+    <button class="reveal">Reveal the Magic</button>
+    <hr>
+    <p id="colour">My favorite color is <span></span></p>
+    <img class="whoa" src="https://www.nationalparks.org/sites/default/files/styles/wide_2x/public/shutterstock_142351951.jpg?itok=4VSjqdM1&timestamp=1474998760" width="150px">
+    <button class="changesize">Change Size</button>
+
+
+
+</body>
+</html>
+

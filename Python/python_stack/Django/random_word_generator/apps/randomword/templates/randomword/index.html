@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/randomize" method="post">
+        {% csrf_token %}
+    <h2>Random Word (attempt #{{request.session.number}}</h2>
+
+       <h1>{{request.session.wordrandom}}</h1>
+        <input type="submit" value="Generate">
+    </form>
+
+
+</body>
+</html>

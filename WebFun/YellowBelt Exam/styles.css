@@ -1,0 +1,182 @@
+*{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+.wrapper{
+ width: 970px;
+ background-color: #141111;
+ margin: 0px auto;
+ padding: 20px;
+ font-family: "Helvetica", Arial, sans-serif;
+ height: auto;
+}
+
+
+#header img{
+	max-width: 200px;
+	
+}
+
+#header p, 
+#header img, 
+.icon,
+.contentinicon,
+.ad h1, 
+.ad p,
+.ad button,
+.icon img,
+.portf,
+.morecontent a,
+.morecontent h2,
+.portinfo,
+.navbar p{
+	display: inline-block;
+}
+
+#header p{
+	margin-left: 600px;
+	font-size: 1em;
+	font-weight: bold;
+}
+.content{
+	width: 970px;
+}
+.navbar{
+	background-color: #474242;
+	padding: 10px;
+	margin: 10px 0 0 0;
+}
+
+.navbar a{
+	text-decoration: none;
+	
+	margin: 0 10px;
+}
+
+.navbar p, 
+.navbar a,
+a#tothetop{
+	color: silver;
+}
+
+.navbar span, 
+.ad button,
+#header p, 
+.wrapper{
+	color: white;
+}
+
+.main img{
+	max-width: 100%;
+}
+
+
+.icon{
+	margin: 8px;
+}
+
+.icon p, .icon h3{
+	font-size: 0.8em;
+}
+
+.icon h3, 
+.morecontent a,
+.portf h3{
+	color: orange;
+}
+.contentinicon{
+	width: 150px;
+	height: 100px;
+	margin: 5px;
+	margin-top: 30px;
+}
+
+.contentinicon h3,
+.ad button{
+	font-size: 1em;
+}
+
+.ad{
+	background-image: black;
+	padding: 25px 15px;
+
+}
+
+.ad h1, 
+.ad p,
+.morecontent h2,
+.portf h3{
+	font-weight: 100;
+}
+
+
+.ad h1, .ad p{
+	
+	width: 80%;
+}
+
+.ad button, .icon img, #header p{
+	vertical-align: top;
+}
+
+.ad button{
+	margin-left: 30px;
+	padding: 10px;
+	background-color: orange;
+	border-style: none;
+	border-radius: 10px;
+}
+
+.icon img{
+	margin-top: 28px;
+}
+
+
+.morecontent{
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.morecontent a{
+	text-decoration: none;
+	font-style: italic;
+	margin-left: 700px;
+}
+
+.morecontent a,
+a#tothetop,
+.portf p{
+	font-size: 0.7em;
+}
+
+.portfolios{
+	margin-top: 10px;
+}
+.portf img{
+	border: 4px solid grey;
+	width: 194px;
+	height: 130px;
+}
+
+.portinfo{
+	width: 100%;
+}
+
+.portf{
+	margin: 10px;
+	width: 21.7%;
+}
+
+.portf p{
+	margin-top: 8px;
+}
+
+a#tothetop{
+    margin-left: 800px;
+    margin-top: 30px;
+    font-style: normal;
+    vertical-align: bottom;
+    text-decoration: none;
+}

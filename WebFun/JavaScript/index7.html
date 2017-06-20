@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Print Names</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict"; 
+		
+
+		function quartersrand(quarters){
+			//Picking a random number of coins
+			var rannum = Math.floor(Math.random() * 101);
+			console.log(rannum);
+			var ranquarnum = Math.floor(Math.random() * 51)+50;
+			console.log(ranquarnum);
+			for(var i = quarters; i>0; i--){
+				if(quarters == rannum){
+					return i+ranquarnum;
+				}
+			}
+			return 0;
+		}
+
+		console.log(quartersrand(32));
+
+		
+
+
+	</script>
+</body>
+</html>
