@@ -12,6 +12,7 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
 
 
+
 class Post(models.Model):
     title = models.CharField(max_length=45)
     message = models.TextField(max_length=1000)

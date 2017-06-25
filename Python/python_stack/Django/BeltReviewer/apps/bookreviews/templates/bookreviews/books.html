@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+<h1>Yeah you made it</h1>
+<h1>Welcome {{user.name}}!</h1>
+<h3><a href="/books/add">Add Book and Reviews</a></h3>
+<h3><a href="/logout">Log Out</a></h3>
+<h3>Recent Book Reviews:</h3>
+ {% if bookreview %}
+    {% for diffbook in bookreview %}
+        <h3 class="message"><a href="/books/{{diffbook.thisbook.id}}/">{{diffbook.thisbook.title}}</a></h3>
+        <h3 class="message">{{diffbook.rating}}</h3>
+        <h3 class="message">{{diffbook.review}}</h3>
+        <h3><a href="/users/{{diffbook.thisuser.id}}/">{{diffbook.thisuser.alias}}</a></h3>
+        <h3>{{diffbook.created_at}}</h3>
+
+    {% endfor %}
+{% endif %}
+
+<h1>Other books with reviews</h1>
+ {% if book %}
+    {% for diffbooktitle in book %}
+        <h3 class="message"><a href="/books/{{diffbooktitle.id}}/">{{diffbooktitle.title}}</a></h3>
+
+    {% endfor %}
+{% endif %}
+
+
+
+</body>
+</html>

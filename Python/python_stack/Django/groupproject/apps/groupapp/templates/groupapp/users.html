@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+        <h1>Users</h1>
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>View Interest</th>
+            </thead>
+            {% for user in users %}
+            <tr>
+                <td>{{user.name}}</td>
+                <td><a href="/viewinterest/{{user.id}}">view</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+</body>
+</html>

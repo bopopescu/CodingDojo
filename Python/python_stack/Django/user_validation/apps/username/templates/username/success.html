@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Username Validator</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+        <h1>{{message}}</h1>
+    {% endfor %}
+    {% endif %}
+    <h3>Usernames entered:</h3>
+    <table>
+    {% for user in users %}
+    <tr>
+        <td>{{user.email}}</td>
+        <td>{{user.created_at.date}}</td>
+        <td>{{user.created_at.time}}</td>
+        <td><a href="/delete/{{user.id}}">X</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

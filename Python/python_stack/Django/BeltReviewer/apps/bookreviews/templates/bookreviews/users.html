@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+
+                <h2>{{user.name}}</h2>
+                <p>Alias:</p> {{user.alias}}
+                <p>Email:</p> {{user.email}}
+                <p>Total Review: {{count}}</p>
+
+
+                {% if book %}
+                    {% for diffbookrev in book %}
+                        <a href="/books/{{diffbookrev.thisbook.id}}/">{{diffbookrev.thisbook.title}}</a></h3>
+                    {% endfor %}
+                {% endif %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'books/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.category}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+    <hr>
+    <div class="add">
+    <h1>Add a Book</h1>
+        <form action="/addbooks" method="post">
+            {% csrf_token %}
+            <label for="">Title</label>
+            Title: <input type="text" name="title">
+            Category: <input type="text" name="category">
+            Author: <input type="text" name="author">
+            <input type="submit" value="Submit!">
+        </form>
+    </div>
+</body>
+</html>
