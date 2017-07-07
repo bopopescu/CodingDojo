@@ -2,20 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>{{user.name}}</title>
+         {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bookreviews/css/userstyles.css' %}" media="screen" title="no title"  charset="utf-8">
+
 </head>
 <body>
+    <div class="header">
+            <h3><a href="/books">Home</a></h3>
+            <h3><a href="/books/add">Add Book and Reviews</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </div>
+        <div class="wrapper">
 
                 <h2>{{user.name}}</h2>
-                <p>Alias:</p> {{user.alias}}
-                <p>Email:</p> {{user.email}}
-                <p>Total Review: {{count}}</p>
+                <h3>Alias: {{user.alias}}</h3>
+                <h3>Email: {{user.email}}</h3>
+                <h3>Total Review: {{count}}</h3>
 
-
+                <h3>Posted reviews on the following books</h3>
                 {% if book %}
                     {% for diffbookrev in book %}
-                        <a href="/books/{{diffbookrev.thisbook.id}}/">{{diffbookrev.thisbook.title}}</a></h3>
+                        <h3><a href="/books/{{diffbookrev.thisbook.id}}/">{{diffbookrev.thisbook.title}}</a></h3>
                     {% endfor %}
                 {% endif %}
+                {% if booklist %}
+                    {% for diffbookrev in booklist %}
+                        <h3><a href="/books/{{diffbookrev.thisbook.id}}/">{{diffbookrev.thisbook.title}}</a></h3>
+                    {% endfor %}
+                {% endif %}
+        </div>
 </body>
 </html>

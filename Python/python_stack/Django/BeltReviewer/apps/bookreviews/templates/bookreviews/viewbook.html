@@ -3,31 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bookreviews/css/addstyles.css' %}" media="screen" title="no title"  charset="utf-8">
+
 </head>
 <body>
-                    {% if messages %}
-                    {% for message in messages %}
-                        <h3 class="message">{{message}}</h3>
-                    {% endfor %}
-                {% endif %}
-    <h3><a href="/index">Home</a></h3>
-    <h3><a href="/logout">Logout</a></h3>
-    <h1>Add a New Book Title and a Review</h1>
-    <form action="/addbooksandreviews" method="POST">
-        {% csrf_token %}
-        <p>Book Title:</p> <input type="text" name="book_title">
-        <p>Author:</p> <input type="text" name="book_author">
-        <p>Review:</p> <input type="text" name="book_review">
-        Rating:
-        <select name = "book_rating">
-            <option value="1">*</option>
-            <option value="2">**</option>
-            <option value="3">***</option>
-            <option value="4">****</option>
-            <option value="5">*****</option>
-        </select>
-        <input type="submit" value="Add Book and Review">
-    </form>
+    
+
+        <div class="header">
+            <h3><a href="/books">Home</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </div>
+                                {% if messages %}
+                        {% for message in messages %}
+                            <h3 class="message">{{message}}</h3>
+                        {% endfor %}
+                    {% endif %}
+        <div class="wrapper">
+        <h1>Add a New Book Title and a Review</h1>
+        <form action="/addbooksandreviews" method="POST">
+            {% csrf_token %}
+            <p>Book Title:</p> <input type="text" name="book_title">
+            <p>Author:</p> <input type="text" name="book_author">
+            <p>Review:</p> <input type="text" name="book_review">
+            <div>
+            <p class="rating">Rating:</p>
+            <select name = "book_rating">
+                <option value="*">*</option>
+                <option value="**">**</option>
+                <option value="***">***</option>
+                <option value="****">****</option>
+                <option value="*****">*****</option>
+            </select>
+            </div>
+            <input type="submit" value="Add Book and Review">
+        </form>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'secrets/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+    <h1>Clients</h1>
+    {% if allclients %}
+    {% for client in allclients %}
+        <p><a href="client/{{client.id}}">{{client.business_name}}</a></p>
+        <p>{{client.email}}</p>
+        <p>{{client.phone}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <a href="client/add">Add a client</a>
+    
+
+</body>
+</html>

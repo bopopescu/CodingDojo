@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{intanduser.name}}
+    {% for interest in intanduser.interest.all%}
+        {{interest.text}}
+    {% endfor %}
+</body>
+</html>

@@ -2,39 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>{{book.title}}</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bookreviews/css/viewstyles.css' %}" media="screen" title="no title"  charset="utf-8">
+
 </head>
 <body>
+            <div class="header">
+            <h3><a href="/books">Home</a></h3>
+            <h3><a href="/logout">Logout</a></h3>
+        </div>
+                                {% if messages %}
+                        {% for message in messages %}
+                            <h3 class="message">{{message}}</h3>
+                        {% endfor %}
+                    {% endif %}
+    <div class="wrapper">
 
                 <h2>{{book.title}}</h2>
-                Author: {{book.author.name}}
-                <h1>Reviews</h1>
-                {{bookreview.content}}
-                {{bookreview.rating}}
-                {% if bookreview %}
-                    {% for diffbookrev in bookreview %}
-                        <h3><a href="/users/{{diffbookrev.thisuser.id}}/">{{diffbookrev.thisuser.alias}}</a></h3>
-                        <h3 class="message">{{diffbookrev.rating}}</h3>
-                        <h3 class="message">{{diffbookrev.content}}</h3>
-                        <h3>{{diffbookrev.created_at}}</h3>
-                        {% if diffbookrev.thisuser.id == user.id %}
-                            <a href="/deletereview/{{diffbookrev.id}}/">delete</a>
-                        {% endif %}
-                        {% endfor %}
-                {% endif %}
-                <h1>Add a Review</h1>
-                <form action="/addindreview" method="POST">
-                    {% csrf_token %}
-                    <p>Review:</p> <input type="text" name="book_review">
-                    Rating:
-                    <select name = "book_rating">
-                        <option value="1">*</option>
-                        <option value="2">**</option>
-                        <option value="3">***</option>
-                        <option value="4">****</option>
-                        <option value="5">*****</option>
-                    </select>
-                    <input type="submit" value="Submit Review">
-                </form>
+                <h3>Author: {{book.author.name}}</h3>
+                <div class="rev">
+                    <h1>Reviews</h1>
+                    {{bookreview.content}}
+                    {{bookreview.rating}}
+                    {% if bookreview %}
+                        {% for diffbookrev in bookreview %}
+                            <div class="diffbook">
+                                <h3 class="">Rating: {{diffbookrev.rating}}</h3>
+                            <h3><a href="/users/{{diffbookrev.thisuser.id}}/">{{diffbookrev.thisuser.alias}} </a>says: {{diffbookrev.content}}</h3>
+                            
+                            <h3 class="date">Posted on {{diffbookrev.created_at}}</h3>
+                            {% if diffbookrev.thisuser.id == user.id %}
+                                <a href="/deletereview/{{diffbookrev.id}}/">Delete this review</a>
+                            {% endif %}
+                            </div>
+                            {% endfor %}
+                            
+                    {% endif %}
+                </div>
+                <div class="addrev">
+                    <h1>Add a Review</h1>
+                    <form action="/addindreview" method="POST">
+                        {% csrf_token %}
+                        <p>Review:</p> <input type="text" name="book_review">
+                        <p>Rating:</p>
+                        <select name = "book_rating">
+                            <option value="1">*</option>
+                            <option value="2">**</option>
+                            <option value="3">***</option>
+                            <option value="4">****</option>
+                            <option value="5">*****</option>
+                        </select>
+                        <input type="submit" value="Submit Review">
+                    </form>
+                </div>
+        </div>
 </body>
 </html>

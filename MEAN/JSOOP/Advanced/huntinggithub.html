@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <button>Press Me!</button>
+  </body>
+  <script>
+    $(document).ready(function(){
+      $("button").get("https://api.github.com/users/sushmamangalapally", displayName)
+      // Notice that displayName is a function that takes in 1 parameter (this is the data that comes back from the API)
+      function displayName(data) {
+        console.log(data);
+      }
+    });
+
+  </script>
+</html>

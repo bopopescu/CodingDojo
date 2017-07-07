@@ -5,5 +5,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^login$', views.login),
     url(r'^toregister$', views.toregister),
-    url(r'^success$', views.success),
+    url(r'^pokes$', views.pokes),
+    url(r'^pokesomeone/(?P<id>\d+)$', views.pokesomeone)
 ]

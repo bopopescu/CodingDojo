@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'secrets/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+    <h2>Add a client</h2>
+    {% if messages %}
+    {% for message in messages %}
+        {{message}}
+    {% endfor %}
+    {% endif %}
+
+    <a href="/">Cancel</a>
+
+    <form action="/addclient" method="post">
+        {% csrf_token %}
+        <p>Business Name:</p> <input type="text" name="business_name">
+        <p>Email:</p> <input type="text" name="email">
+        <p>Phone:</p> <input type="text" name="phone">
+        <p>Notes:</p> <input type="text" name="notes">
+        <input type="submit" value="Add">
+    </form>
+
+</body>
+</html>

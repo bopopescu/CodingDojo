@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+        margin: auto;
+        width: 1060px;
+        background: tomato;
+        font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+
+.wrapper{
+        width: 790px;
+        background: white;
+        
+        padding: 20px;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 30px;
+}
+
+.header h3, .header h1{
+    display: inline-block;
+            text-decoration: none;
+        color: white;
+        margin-top: 30px;
+
+}
+
+
+
+input[type=submit]{
+    border: none;
+    padding: 10px;
+    margin-top: 3px;
+    background: tomato;
+    color: white;
+    border-radius: 5px;
+    margin-left: 600px;
+}
+
+.message{
+    background: white;
+    border: 1px solid whitesmoke;
+    color: tomato;
+    margin-top: 10px;
+    text-align: center;
+    padding: 3px;
+}
+
+.rating, select{
+    display: inline-block;
+}

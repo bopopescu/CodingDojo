@@ -53,8 +53,8 @@ def books(request):
             "bookreview": bookreview,
             "book": book
         }
-    
-    return render(request, 'bookreviews/books.html', context)
+        return render(request, 'bookreviews/books.html', context)
+    return redirect('/')
 
 def addbook(request): #books/add
     return render(request, 'bookreviews/viewbook.html')
@@ -73,11 +73,11 @@ def toadd(request): #addbooksandreviews
                 for err in validatebook['bookdata']:
                     messages.error(request, err)
                 return redirect('books/add')
+    return redirect('/')
 
     
 
 def seebook(request, id):
-    if 'getbook' in request.session:
         book = Book.objects.get(id = id)
         user = User.objects.get(id = request.session['userId'])
         request.session['getbook'] = book.id
@@ -99,11 +99,13 @@ def seeusers(request, id):
     getbook = Book.objects.all()
     getcount = BookReview.objects.filter(thisuser_id = user.id).annotate(countid =Count('thisbook')).count()
     print BookReview.objects.filter(thisuser_id = user.id)
-    bookslist = []
-    for i in getbook:
-        if BookReview.objects.filter(thisbook_id=i.id).exists():
-            bookslist.append(BookReview.objects.filter(thisuser_id = user.id).order_by('thisbook')[1])
-    print bookslist
+    # bookslist = []
+    # for i in getbook:
+    #     if BookReview.objects.filter(thisbook_id=i.id).exists():
+    #         bookslist.append(BookReview.objects.filter(thisuser_id = user.id).order_by('thisbook'))
+    # print bookslist
+    dat = BookReview.objects.filter(thisuser = id)
+    bookslist = Book.objects.filter(id__in = dat.values('thisbook_id'))
     context = {
         "user": user,
         "count": getcount,
@@ -115,7 +117,7 @@ def seeusers(request, id):
 def logout(request):
     if 'userId' in request.session:
         request.session.clear()
-        return redirect('/')
+    return redirect('/')
 
 def addreview(request):
     if 'getbook' in request.session:

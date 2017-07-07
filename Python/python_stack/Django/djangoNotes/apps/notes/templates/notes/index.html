@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    {% load staticfiles %}
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'notes/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+    {% if allpost %}
+    {% for post in allpost %}
+        <div>
+        <p>{{post.content}}</p>
+        </div>
+    {% endfor %}
+    {% endif %}
+
+    <form action='/addnotes', method='POST'>
+        {% csrf_token %}
+        <label for="emailforlogin">Notes:<input type="text" name="content" id="content"></label>
+        <p><input type="submit" value="Post Notes"></p>
+  </form>
+</body>
+  <script>
+    // You could also put this code in another JavaScript file... Remember to use $(document).ready() if the script tag is included before the DOM nodes you care about...
+    $('form').submit(function(e){
+      // preventDefault stops the default action of the event (e) from being triggered.
+      e.preventDefault();
+        $.ajax({
+            url: '/addnotes',
+            method: 'POST',
+            data: $(this).serialize(),
+            success: function(serverResponse){
+                console.log("Received this from server: ", serverResponse)
+                console.log("I should probably put that in the DOM...")
+                $('.posts').html(serverResponse)
+            }
+        })
+    });
+  </script>
+
+</html>

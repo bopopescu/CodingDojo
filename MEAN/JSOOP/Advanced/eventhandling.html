@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <button id="someButton">Click Me!</button>
+    </body>
+    <script>
+        var button = document.getElementById("someButton")
+        // add a DOM eventListener to that variable.
+        button.addEventListener("click", whatToDoOnClick);
+        // here we define the whatToDoOnClick function
+        function whatToDoOnClick() {
+            alert("You Did it!")
+        }
+
+        (function (global) {
+   console.log( window );               // logs the window object
+   console.log( global );               // logs the window object, but faster!
+}) ( window ) ;
+
+
+    </script>
+</html>
+

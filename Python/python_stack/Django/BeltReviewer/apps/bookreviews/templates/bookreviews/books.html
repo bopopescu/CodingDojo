@@ -2,32 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Books</title>
+        {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bookreviews/css/bookstyles.css' %}" media="screen" title="no title"  charset="utf-8">
 </head>
 <body>
-<h1>Yeah you made it</h1>
-<h1>Welcome {{user.name}}!</h1>
-<h3><a href="/books/add">Add Book and Reviews</a></h3>
-<h3><a href="/logout">Log Out</a></h3>
-<h3>Recent Book Reviews:</h3>
- {% if bookreview %}
-    {% for diffbook in bookreview %}
-        <h3 class="message"><a href="/books/{{diffbook.thisbook.id}}/">{{diffbook.thisbook.title}}</a></h3>
-        <h3 class="message">{{diffbook.rating}}</h3>
-        <h3 class="message">{{diffbook.review}}</h3>
-        <h3><a href="/users/{{diffbook.thisuser.id}}/">{{diffbook.thisuser.alias}}</a></h3>
-        <h3>{{diffbook.created_at}}</h3>
+    <div class="wrapper">
+    <div class="header">
+        <h1>Welcome {{user.name}}!</h1>
+        <div class="headtabs">
+            <h3><a href="/books/add">Add Book and Reviews</a></h3>
+            <h3><a href="/logout">Log Out</a></h3>
+        </div>
+    </div>
+    <div class="rec">
+        <h2>Recent Book Reviews:</h2>
+        
+        {% if bookreview %}
+            {% for diffbook in bookreview %}
+            <div class="diffbook">
+                <h3 class="name"><a href="/books/{{diffbook.thisbook.id}}/">{{diffbook.thisbook.title}}</a></h3>
+                <div class="diffbookcontent">
+                    <h4 class="name">Rating: {{diffbook.rating}}</h4>
+                    <h4><a href="/users/{{diffbook.thisuser.id}}/">{{diffbook.thisuser.alias}}</a> says: {{diffbook.content}}</h4>
+                    <h4 class="date">Posted on {{diffbook.created_at}}</h4>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="oth">
+        <h2>Other books with reviews</h2>
+        {% if book %}
+            {% for diffbooktitle in book %}
+                <h3 class="message"><a href="/books/{{diffbooktitle.id}}/">{{diffbooktitle.title}}</a></h3>
 
-    {% endfor %}
-{% endif %}
-
-<h1>Other books with reviews</h1>
- {% if book %}
-    {% for diffbooktitle in book %}
-        <h3 class="message"><a href="/books/{{diffbooktitle.id}}/">{{diffbooktitle.title}}</a></h3>
-
-    {% endfor %}
-{% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+    </div>
 
 
 

@@ -4,6 +4,8 @@ from django.db import models
 
 import re
 
+import bcrypt
+
 from django.contrib import messages
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
@@ -15,16 +17,16 @@ LASTNAME_REGEX = re.compile(r'^[a-zA-Z]')
 class UserManager(models.Manager):
     def register(self, email,  first_name, last_name, password, passwordconfirmation):
         errorsforreg = []
-        no_same_email = True
+        # no_same_email = True
         if len(email) < 1 and not EMAIL_REGEX.match(email):
             errorsforreg.append("Email must not be empty or must be in good format -> asdf@mail.com!")
         
-        try:
-            checkforsameemail = User.userManager.get(email=email)
-            errorsforreg.append("Opps! Looks like this email already exists in our database!")
-            no_same_email = False
-        except:
-            no_same_email = True
+        # try:
+        #     checkforsameemail = User.userManager.get(email=email)
+        #     errorsforreg.append("Opps! Looks like this email already exists in our database!")
+        #     no_same_email = False
+        # except:
+        #     no_same_email = True
 
         if len(first_name) < 2 and not FIRSTNAME_REGEX.match(first_name):
             errorsforreg.append("Firstname must not be empty or must only have letters!")
@@ -36,17 +38,19 @@ class UserManager(models.Manager):
             errorsforreg.append("Password and password confirmation must match!")
 
         if not errorsforreg:
-            user = User.userManager.create(first_name = first_name, last_name = last_name, email = email, password = password)
-            return {"status": True, "sameemail": no_same_email, "data": user}
+            password = password.encode()
+            hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+            user = User.userManager.create(first_name = first_name, last_name = last_name, email = email, password = hashed)
+            return {"status": True, "data": user}
         else:
-            return {"status": False, "sameemail": no_same_email, "data": errorsforreg}
+            return {"status": False, "data": errorsforreg}
 
     def login(self, emailforlogin, passwordforlogin):
         errors = []
 
         if len(emailforlogin) < 1:
             errors.append("Email must not be empty or must have more than 2 characters")
-        if not EMAIL_REGEX.match(email): # email regex
+        if not EMAIL_REGEX.match(emailforlogin): # email regex
             errors.append("Email must not be empty or must be in good format -> asdf@mail.com!")
         
         
@@ -58,21 +62,46 @@ class UserManager(models.Manager):
             if user_list:
                 getuser = user_list[0]
                 if getuser.password == passwordforlogin:
-                    user = User.userManager.get(email = emailforlogin, password = passwordforlogin)
+                    user = User.userManager.filter(email = emailforlogin, password = passwordforlogin)
                     return {"status": True, "data": user}
                 else:
                     errors.append("Password is wrong!")
             else:
                 errors.append("Opps! Not in our database! Register! Please!")
 
-        return {"status": False, "data": errors}     
+        return {"status": False, "data": errors}   
+
+class PokeManager(models.Manager):
+    def newPoke(self, user_id):
+        user = User.objects.get(id = userId)
+        poke = Poke.objects.create(user_id = user)
+
+    def getPoke(self, user_id, poker_id):
+        if User.UserManager.get(id = user_id).exists():
+            user = User.UserManager.filter(id = user_id)
+            poke = Poke.objects.get(id = poker_id)
+            poke.poker_id.add(user[0].id)
+            return True
+        else:
+            return False
+            
+
 
 
 class User(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    alias = models.CharField(max_length=100)
     email = models.CharField(max_length=200)
     password = models.CharField(max_length=100)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now_add=True)
     userManager = UserManager()
+
+class Poke(models.Model):
+    user_id = models.ForeignKey(User, related_name="gotpoked")
+    poker_id = models.ManyToManyField(User, related_name="poker")
+    created_at = models.DateField(auto_now_add=True)
+    objects = PokeManager()
+
+

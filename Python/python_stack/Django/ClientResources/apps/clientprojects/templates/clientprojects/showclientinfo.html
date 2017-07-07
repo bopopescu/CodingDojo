@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+       {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'secrets/css/styles.css' %}" media="screen" title="no title"  charset="utf-8">
+
+</head>
+<body>
+    <h2>{{getclient.business_name}}</h2>
+    <h3>Projects</h3>
+    {% if getspecificproject %}
+    {% for proj in getspecificproject %}
+        <p><a href="/show/projects/{{proj.id}}">{{proj.project_name}}</a></p>
+    {% endfor %}
+    {% endif %}
+    {% if getclient %}
+        <p>Email: {{getclient.email}}</p>
+        <p>Phone Number: {{getclient.phone}}</p>
+        <p>Notes: {{getclient.notes}}</p>
+    {% endif %}
+
+    <a href="/">Back</a>
+
+    <a href="/{{getclient.id}}/addproject">Add Project</a>
+
+</body>
+</html>
