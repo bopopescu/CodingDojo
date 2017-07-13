@@ -1,0 +1,25 @@
+<html>
+    <head>
+    </head>
+<body>
+    <form action="/users" method="post">
+    Name: <input type='text' id="Input" name='name'>
+    <br>
+    Age: <input type='text' id="Input" name='age'>
+    <button>Submit</button>
+    </form>
+    <ul>
+            <% for(var i=0 ; i < allUsers.length; i++){ %>
+            <li><%= allUsers[i].name %></li>
+            <% } %>
+
+             <% if(typeof(errors) != 'undefined' ) { %>
+                <% for (var x in errors) { %>
+                    <h3><%= errors[x].message %></h3>
+                <% } %>
+            <% } %>
+
+    </ul>
+</body>
+</html>
+

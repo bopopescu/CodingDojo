@@ -1,0 +1,13 @@
+<html>
+    <head>
+    </head>
+<body>
+    <div>
+        <form action="/manatees/<%= thismanatee._id %>" method="post">
+        Edit Name of your manatee: <input type='text' id="Input" name='name' placeholder="<%= thismanatee.name %>">
+        Edit Ocean of your manatee: <input type="text" name="ocean" placeholder="<%= thismanatee.ocean %>">
+        <button>Add your manatee!</button>
+        </form>
+    </div>
+</body>
+</html>

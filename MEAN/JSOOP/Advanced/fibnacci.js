@@ -6,6 +6,12 @@ function fib() {
   function nacci() {
       get = get+count
       count = get
+      if(get <= 1){
+        get = get;
+      }
+      else {
+        nacci
+      }
     // do something to those variables here
     console.log(get)
   }

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" href="/css/styles.css">
+        
+        <script type ="text/javascript">
+            $(document). ready(function (){
+                var socket  = io.connect();
+                var name = prompt("What's your name:");
+                $('#postthedata').html("Logged In: "+name);
+                // this triggers the connection event in our server!
+                socket.emit("got_a_new_user", {name: name});
+
+        
+                socket.on( 'new_user', function (data){
+                    console.log("what")
+                    // $("#convo").append("<h3>Loggin In: "+data.name+"</h3>");
+                    for (var i in data.previous_convo){
+                        $("#convo").append("<h3>"+data.previous_convo[i]+"</h3>")
+                    }
+                    console. log('The server says: '  + data.name);
+                });
+
+                $("button").click(function(e){
+                    e.preventDefault();
+                    var message = $("#message").val();
+                    socket.emit("theconvo", {user_name: name, themessage: message});
+                    return false;
+                })
+                
+                socket.on("updated_chat", function(boarddata){
+                    
+                    $("#convo").append("<h3>"+boarddata.response+"</h3>")
+                    messages.push(boarddata.response)
+                    console.log(boarddata.response)
+                })
+
+            })
+        </script>
+    </head>
+<body>
+    <div class="thiswholeconvo">
+        <div id="postthedata"></div>
+        <h2>Conversation Board</h2>
+        <div>
+            <div id="convo"></div>
+            <div id="moreconvo"></div>
+            <input type="text" name="message" size="95" id="message">
+            <button>Send</button>
+        </div>
+    </div>
+</body>
+</html>

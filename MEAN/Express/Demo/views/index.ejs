@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+<body>
+    <form action="/users" method="post">
+    Name: <input type='text' id="Input" name='name'>
+    <br>
+    Email: <input type='text' id="Input" name='age'>
+    Password: <input type='text' id="Input" name='password'>
+    <button>Submit</button>
+    </form>
+    <% for(var i=0; i<users.length; i++){ %>
+        <h1><=% users[i].name %></h1>
+    <% } %>
+
+</body>
+</html>
+

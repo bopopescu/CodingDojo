@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type ="text/javascript">
+            $(document).ready(function (e){
+                // this triggers the connection event in our server!
+                var socket  = io.connect();
+                // we'll write all the socket stuff after the above line!
+
+                $( '#epic').click(function (){
+                    socket.emit( "countingthenumber", {reason: "because I want to learn about sockets!"});
+                });
+                $('#reset').click(function(){
+                    socket.emit("resettingthenumber");
+                })
+                socket.on( 'updated_message', function (data){
+                    $("#thecount").html(data.response);
+                    console. log('The server says: '  + data.response);
+                });
+                return false;
+            })
+        </script>
+    </head>
+    <body>
+        <h1>The button has been pushed <span id="thecount"></span> time(s)</h1>
+        <p>Push the button to update the count</p>
+        <button id="epic">Push the epic button</button>
+        <button id="reset">Reset the count</button>
+    </body>
+</html>
