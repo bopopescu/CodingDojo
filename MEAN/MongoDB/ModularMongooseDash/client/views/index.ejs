@@ -1,0 +1,25 @@
+<html>
+    <head>
+    </head>
+<body>
+    <h3>Add a manatee</h3>
+    <a href="/manatees/new">Add</a>
+    <ul>
+            <% for(var i=0 ; i < allManatees.length; i++){ %>
+            <p><%= allManatees[i].name %></p>
+            <p><%= allManatees[i].ocean %></p>
+            <p><%= allManatees[i].age %></p>
+            <img src="<%= allManatees[i].image %>" width="200" height="200">
+            <br>
+            <a href = "/manatees/<%= allManatees[i]._id %>">Get Info</a>
+            <a href = "/manatees/edit/<%= allManatees[i]._id  %>">Edit This</a>
+            <form action="/manatees/destroy/<%= allManatees[i]._id  %>" method="POST">
+                <button>destroy</button>
+            </form>
+            <hr>
+            <% } %>
+
+
+    </ul>
+</body>
+</html>
