@@ -18,53 +18,40 @@ export class AppComponent {
   get = ""
   offset = 0;
   yep = 0
-  bgc1 = "white";
-  bgc2 = "white";
-  bgc3 = "white";
-  bgc4 = "white";
+  timeTypes = ["PST", "MST", "CST", "EST"];
+  activeTime;
+  getcolor;
 
-  onPST(){
-     //this.thisdate = this.thisdate.getTime()
-     this.bgc1 = "yellow"
-     this.thisdate = new Date()
+  updateTime(gettime){
+    this.getcolor = "white"
+    if(gettime == "MST"){
+      this.offset = 6;
+      this.yep = this.utc - (3600000*this.offset)
+      this.thisdate = new Date(this.yep)
+      this.getcolor = "yellow"
+    }
+    else if(gettime == "PST"){
+      this.thisdate = new Date()
+      this.getcolor = "yellow"
+    }
+    else if(gettime == "CST"){
+      this.offset = 5;
+      this.yep = this.utc - (3600000*this.offset)
+      this.thisdate = new Date(this.yep)
+      this.getcolor = "yellow"
+    }
+    else if(gettime == "EST"){
+      this.offset = 4;
+      this.yep = this.utc - (3600000*this.offset)
+      this.thisdate = new Date(this.yep)
+      this.getcolor = "yellow"
+    }
+
+    this.activeTime = gettime;
+    
   }
 
-  onMST(){
-     this.offset = 6;
-     this.bgc2 = "yellow"
-     this.bgc1 = "white";
-     this.bgc3 = "white";
-     this.bgc4 = "white";
-     this.yep = this.utc - (3600000*this.offset)
-     this.thisdate = new Date(this.yep)
-  }
 
-  onCST(){
-     this.offset = 5;
-     this.bgc3 = "yellow"
-     this.bgc1 = "white";
-     this.bgc2 = "white";
-     this.bgc4 = "white";
-     this.yep = this.utc - (3600000*this.offset)
-     this.thisdate = new Date(this.yep)
-  }
-
-  onEST(){
-     this.offset = 4;
-     this.bgc4 = "yellow"
-     this.bgc1 = "white";
-     this.bgc2 = "white";
-     this.bgc3 = "white";
-     this.yep = this.utc - (3600000*this.offset)
-     this.thisdate = new Date(this.yep)  }
-
-  clear(){
-    this.bgc1 = "white";
-    this.bgc2 = "white";
-    this.bgc3 = "white";
-    this.bgc4 = "white";    
-    this.thisdate = null;
-  }
 
 
 }
