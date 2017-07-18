@@ -1,0 +1,13 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}!
+  </h1>
+  <button (click)="onPST()" [ngStyle]="{ 'background-color': bgc1 }">PST</button>
+  <button (click)="onMST()"  [ngStyle]="{ 'background-color': bgc2 }">MST</button>
+  <button (click)="onCST()" [ngStyle]="{ 'background-color': bgc3 }">CST</button>
+  <button (click)="onEST()" [ngStyle]="{ 'background-color': bgc4 }">EST</button>
+  <button (click)="clear()" [ngStyle]="{ 'background-color': 'white' }">Clear</button>
+  <br>
+  {{thisdate | date: 'medium' }}
+</div>

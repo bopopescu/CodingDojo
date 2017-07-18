@@ -6,3 +6,10 @@
 
 
 .on { background-color: yellow; }
+
+.ng-invalid { }
+.ng-valid { }
+.ng-untouched { }
+.ng-touched { }
+.ng-dirty { }
+.ng-pristine { }
