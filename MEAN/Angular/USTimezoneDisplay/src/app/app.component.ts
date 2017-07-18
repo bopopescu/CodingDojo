@@ -18,12 +18,11 @@ export class AppComponent {
   get = ""
   offset = 0;
   yep = 0
-  timeTypes = ["PST", "MST", "CST", "EST"];
+  timeTypes = ["PST", "MST", "CST", "EST", "Clear"];
   activeTime;
   getcolor;
 
   updateTime(gettime){
-    this.getcolor = "white"
     if(gettime == "MST"){
       this.offset = 6;
       this.yep = this.utc - (3600000*this.offset)
@@ -45,6 +44,10 @@ export class AppComponent {
       this.yep = this.utc - (3600000*this.offset)
       this.thisdate = new Date(this.yep)
       this.getcolor = "yellow"
+    }
+    else if(gettime == "Clear"){
+      this.thisdate = null;
+      this.getcolor = "grey"
     }
 
     this.activeTime = gettime;

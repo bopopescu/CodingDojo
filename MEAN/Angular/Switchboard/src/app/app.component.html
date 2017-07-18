@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    <h1>{{title}}</h1>
+  </h1>
+  <div class="brown" *ngFor="let one of onoroff; let idx = index">
+    <button *ngIf='one'  (click)="onandoff(idx)" [ngClass]="{'switchdatcolor': one}">On</button>
+    <button *ngIf='!one'  (click)="onandoff(idx)" [ngClass]="{'switchdatcolor': one}">Off</button>
+  </div>
+</div>
+
