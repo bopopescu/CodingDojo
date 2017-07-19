@@ -1,0 +1,133 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+</div>
+<div class="info">
+
+  <div [ngClass]="{'hidden': right}">
+    Thank you for registering with us, {{user.firstname}}! We sent you a confirmation email at {{user.email}}
+
+  Have a wonderful day!
+  </div>
+
+  <div [ngClass]="{'gethidden': what}">
+    <h3>Account Information</h3>
+    <form (submit)="onSubmit()" #formData='ngForm'>
+      *First name:
+      <input type="text" name="firstname" required minlength="2" maxlength="24"  [(ngModel)]="user.firstname" #firstname="ngModel" > 
+      <div class="red" *ngIf="firstname.errors && (firstname.dirty || firstname.touched)">
+        <div [hidden]="!firstname.errors.required">
+          First Name is required
+        </div>
+        <div [hidden]="!firstname.errors.minlength">
+          First Name must be at least 2 characters long.
+        </div>
+        <div [hidden]="!firstname.errors.maxlength">
+          First Name cannot be more than 24 characters long.
+        </div>
+      </div>
+      <br> 
+      *Last name:
+      <input type="text" name="lastname" required minlength="4" maxlength="24"  [(ngModel)]="user.lastname" #lastname="ngModel"> 
+      <div class="red" *ngIf="lastname.errors && (lastname.dirty || lastname.touched)">
+        <div [hidden]="!lastname.errors.required">
+          Last Name is required
+        </div>
+        <div [hidden]="!lastname.errors.minlength">
+          Last Name must be at least 2 characters long.
+        </div>
+        <div [hidden]="!lastname.errors.maxlength">
+          Last Name cannot be more than 24 characters long.
+        </div>
+      </div>
+      <br>
+      *Email: 
+      <input type="text" name="email" required minlength="4"  [(ngModel)]="user.email" #email="ngModel">
+      <div class="red" *ngIf="email.errors && (email.dirty || email.touched)">
+        <div [hidden]="!email.errors.required">
+          Email is required
+        </div>
+        <div [hidden]="!email.errors.minlength">
+          Email must be at least 4 characters long.
+        </div>
+      </div>    
+      <br>
+      *Password:
+      <input type="password" name="password" required minlength="4" maxlength="24"  [(ngModel)]="user.password" #password="ngModel">
+      <div class="red" *ngIf="password.errors && (password.dirty || password.touched)">
+        <div [hidden]="!password.errors.required">
+          Password is required
+        </div>
+        <div [hidden]="!password.errors.minlength">
+          Password must be at least 4 characters long.
+        </div>
+      </div>      
+      <br>
+      *Password Confirmation:
+      <input type="password" name="passwordconfirm" required  [(ngModel)]="user.passwordconfirm" compare-to="user.password" #passwordconfirm="ngModel"> 
+      <div class="red" *ngIf="passwordconfirm.errors && (passwordconfirm.dirty || passwordconfirm.touched)">
+        <div [hidden]="!passwordconfirm.errors.required">
+          Password Confirmation is required
+        </div> 
+        <div [hidden]="!passwordconfirm.errors.compare-to">
+          Password Confirmation is required
+        </div>         
+        <span ng-show="user.password !== user.passwordconfirm">Password mismatch</span>
+    
+        </div>        
+      <br>
+      *Street Address:
+      <input type="text" name="straddress" required minlength="4" [(ngModel)]="user.straddress" #straddress="ngModel">
+      <div class="red" *ngIf="straddress.errors && (straddress.dirty || straddress.touched)">
+        <div [hidden]="!straddress.errors.required">
+          Street Address is required
+        </div>
+        <div [hidden]="!straddress.errors.minlength">
+          Street Address must be at least 4 characters long.
+        </div>
+        <div [hidden]="!straddress.errors.maxlength">
+          Street Address cannot be more than 24 characters long.
+        </div>
+      </div>          
+      <br>
+      Unit/Apt #:
+      <input type="text" name="unitapt"><br>
+      *City:
+      <input type="text" name="city" required minlength="3"  [(ngModel)]="user.city" #city="ngModel">
+      <div class="red" *ngIf="city.errors && (city.dirty || straddress.touched)">
+        <div [hidden]="!city.errors.required">
+          City is required
+        </div>
+        <div [hidden]="!city.errors.minlength">
+          City must be at least 3 characters long.
+        </div>
+      </div>      
+      <br>
+      *State:
+      <input type="text" name="state" required maxlength="2"  [(ngModel)]="user.state" #state="ngModel">
+      <div [ngStyle]="{'color': 'red'}" *ngIf="state.errors && (state.dirty || state.touched)">
+        <div [hidden]="!state.errors.required">
+          State is required
+        </div>
+        <div [hidden]="!city.errors.maxlength">
+          State cannot be more than 2 characters long.
+        </div>
+      </div>      
+      
+      <br>
+      I'm feeling lucky:
+      <input type="radio" name="lucky" [(ngModel)]="user.lucky" value="Lucky You" #lucky = "ngModel" required> Lucky You<br>
+      <input type="radio" name="lucky" [(ngModel)]="user.lucky" value="Not Lucky" #lucky = "ngModel" required> Not Lucky<br>
+      <div class="red" *ngIf="lucky.errors && (lucky.dirty || lucky.touched)">
+        <div [hidden]="!lucky.errors.required">
+          Choose a button!
+        </div>
+      </div>      
+      
+      <br>
+      <input [disabled] = "firstname.errors||lastname.errors||email.errors||password.errors||passwordconfirm.errors||straddress.errors||city.errors||state.errors||lucky.errors"  type="submit" value="Register">
+    </form>
+  </div>
+</div>
