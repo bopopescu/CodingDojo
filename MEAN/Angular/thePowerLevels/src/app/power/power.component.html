@@ -1,0 +1,12 @@
+<h3>PowerComponent</h3>
+<h1>Initial Power Level: </h1>
+<form>
+  <input type="number" min="1" max="100" name="thatpowerlevel" [(ngModel)]="thatpowerlevel">
+  <input type="submit" value="Calculate Powers">
+</form>
+  <app-human [thatpowerlevel]="thatpowerlevel"></app-human>
+  <app-saiyan [thatpowerlevel]="thatpowerlevel"></app-saiyan>
+  <app-super-saiyan [thatpowerlevel]="thatpowerlevel"></app-super-saiyan>
+  <app-super-saiyan-two [thatpowerlevel]="thatpowerlevel"></app-super-saiyan-two>
+  <app-super-saiyan-three [thatpowerlevel]="thatpowerlevel"></app-super-saiyan-three>
+  <app-super-saiyan-four [thatpowerlevel]="thatpowerlevel"></app-super-saiyan-four>
