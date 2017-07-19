@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<div *ngFor="let get of morequotes">
+  <h3>{{get.quote}}</h3>
+  <h4>- {{get.author}}</h4>
+  <h1 *ngIf="greater(get.votes)">+{{get.votes}}</h1>
+  <h1 *ngIf="lesser(get.votes)">{{get.votes}}</h1>
+  <form>
+    <button (click)="voteup(get)">Vote Up</button>
+    <button (click)="votedown(get)">Vote Down</button>
+    <button (click)="delete(get)">Delete</button>
+  </form>
+</div>

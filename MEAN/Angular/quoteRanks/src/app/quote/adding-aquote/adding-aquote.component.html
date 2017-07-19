@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<form  (submit)="onSubmit()" #formData='ngForm'>
+  <input type="text" name="quote" required minlength="4" [(ngModel)] = "quote.quote" #myQuote="ngModel" >
+  Author <input type="text" name="author" required minlength="1"  [(ngModel)]="quote.author" #author="ngModel" >
+  <input type="hidden" name="votes" [(ngModel)]="quote.votes" value=0 #votes="ngModel" >
+  <div class="red" *ngIf="myQuote.errors && (myQuote.dirty || myQuote.touched)"> 
+        <div [hidden]="!myQuote.errors.required">
+          myQuote is required
+        </div>
+        <div [hidden]="!myQuote.errors.minlength">
+          Quote must be at least 4 characters long.
+        </div>
+  </div>  
+  <div class="red" *ngIf="author.errors && (author.dirty || author.touched)"> 
+        <div [hidden]="!author.errors.required">
+          Author is required
+        </div>
+        <div [hidden]="!author.errors.minlength">
+          Author must be at least 1 characters long.
+        </div>
+  </div>
+  <input type="submit" value="Add a Quote" [disabled] = "myQuote.errors||author.errors">
+</form>
+
+
+<app-quote-list [morequotes]="morequotes"></app-quote-list>
