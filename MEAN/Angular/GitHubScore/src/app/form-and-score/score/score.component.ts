@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./score.component.css']
 })
 export class ScoreComponent implements OnInit {
-  @Input() tasks;
+  @Input() gettinguserscore;
   whattosay = "";
   wordcolor = ""
   constructor() { }
@@ -16,6 +16,7 @@ export class ScoreComponent implements OnInit {
 
   scoring(number){
     if(number < 20){
+      console.log("sdsds", number)
       this.whattosay = "Needs Work!"
       this.wordcolor = "red"
       console.log(this.whattosay)

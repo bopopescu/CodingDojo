@@ -4,4 +4,4 @@
   <input type="text" name="ghusername" required placeholder="github_username" [(ngModel)] = "ghusername">
   <input type="submit"  value="Calculate my Github Score" [disabled]="!formData.valid">
 </form>
-<app-score [tasks]="tasks"></app-score>
+<app-score [gettinguserscore]="gettinguserscore"></app-score>

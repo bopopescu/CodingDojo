@@ -17,18 +17,18 @@ export class FormAndScoreComponent implements OnInit {
   }
 
     something;
-  tasks;
+  gettinguserscore;
   constructor(private _httpService: HttpService){
     this.something = "something";
   }
 
   onSubmit(){
-    this._httpService.retrieveTasks(this.ghusername)
-      .then( (tasks) => { 
-        console.log(tasks.followers)
-        console.log(tasks.public_repos)
-        tasks = tasks.followers + tasks.public_repos
-        this.tasks = tasks;
+    this._httpService.retrieveUserData(this.ghusername)
+      .then( (userscore) => { 
+        console.log(userscore.followers)
+        console.log(userscore.public_repos)
+        userscore = userscore.followers + userscore.public_repos
+        this.gettinguserscore = userscore;
       })
       .catch( (err) => { 
         console.log(err); 
