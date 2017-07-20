@@ -66,17 +66,15 @@
       </div>      
       <br>
       *Password Confirmation:
-      <input type="password" name="passwordconfirm" required  [(ngModel)]="user.passwordconfirm" compare-to="user.password" #passwordconfirm="ngModel"> 
+      <input type="password" name="passwordconfirm" required  [(ngModel)]="user.passwordconfirm" #passwordconfirm="ngModel"> 
       <div class="red" *ngIf="passwordconfirm.errors && (passwordconfirm.dirty || passwordconfirm.touched)">
         <div [hidden]="!passwordconfirm.errors.required">
           Password Confirmation is required
         </div> 
-        <div [hidden]="!passwordconfirm.errors.compare-to">
-          Password Confirmation is required
-        </div>         
-        <span ng-show="user.password !== user.passwordconfirm">Password mismatch</span>
-    
-        </div>        
+      </div>   
+      <div class="red"  *ngIf="user.password !== user.passwordconfirm"> 
+          <p>Password and password confirmation do not match</p>
+        </div>     
       <br>
       *Street Address:
       <input type="text" name="straddress" required minlength="4" [(ngModel)]="user.straddress" #straddress="ngModel">
