@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<form (submit)="editingProduct()" #formData="ngForm">
+  <label>Title</label>
+  <input type="text" name="title" value="{{product.title}}" required minlength="4" [(ngModel)] = "product.title" #productTitle="ngModel" >
+  <div class="red" *ngIf="productTitle.errors && (productTitle.dirty || productTitle.touched)"> 
+        <div [hidden]="!productTitle.errors.required">
+          Title is required
+        </div>
+        <div [hidden]="!productTitle.errors.minlength">
+          Title must be at least 4 characters long.
+        </div>
+  </div>
+  <label>Price</label>
+  <input type="text" name="price" value="{{product.price}}" required [(ngModel)] = "product.price" #productPrice="ngModel">
+  <div class="red" *ngIf="productPrice.errors && (productPrice.dirty || productPrice.touched)"> 
+        <div [hidden]="!productPrice.errors.required">
+          Price is required
+        </div>
+  </div>
+  <label>Image Url</label>
+  <input type="text" name="image_url"  [(ngModel)] = "product.image_url" #productImg="ngModel">
+  <button (click)="delete(product)">Delete</button>
+  <input type="submit" value="Update" [disabled] = "productTitle.errors||productPrice.errors">
+
+</form>
+

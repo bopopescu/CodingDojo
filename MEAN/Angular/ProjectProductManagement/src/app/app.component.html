@@ -1,0 +1,12 @@
+<h1>
+  <h1>{{title}}</h1>
+</h1>
+<div class="routes">
+  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['/products']">Product List</a>
+  <a [routerLink]="['/products/new']">Product Creation</a>
+</div>
+
+<div class="info">
+  <router-outlet></router-outlet>
+</div>
