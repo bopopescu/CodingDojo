@@ -1,0 +1,9 @@
+div{
+    display: inline-block;
+    margin: 10px;
+    background-color: #fff;
+}
+h2, h1{
+    background-color: #fff;
+    text-align: center;
+}

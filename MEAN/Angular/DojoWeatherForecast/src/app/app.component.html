@@ -1,0 +1,16 @@
+<h1>
+  <h1>{{title}}</h1>
+</h1>
+<div class="routes">
+  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['/seattle']">Seattle</a>
+  <a [routerLink]="['/sanjose']">San Jose</a>
+  <a [routerLink]="['/losangeles']">Los Angeles</a>
+  <a [routerLink]="['/dallas']">Dallas</a>
+  <a [routerLink]="['/chicago']">Chicago</a>
+</div>
+
+<div class="info">
+  <router-outlet></router-outlet>
+</div>
+
