@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<form (submit)="onSubmit()" #formData="ngForm">
+  <label>Note: </label>
+  <input type="text" name="notetext"  required minlength="3" [(ngModel)]="note.text" #notetext="ngModel" > 
+  <div class="red" *ngIf="notetext.errors && (notetext.dirty || notetext.touched)">
+        <div [hidden]="!notetext.errors.required">
+          Note is required
+        </div>
+        <div [hidden]="!notetext.errors.minlength">
+          Note must be at least 2 characters long.
+        </div>
+  </div>  
+  <input [disabled] = "notetext.errors"  type="submit" value="Add Note">    
+</form>
+<h1>notes:</h1>
+ <div *ngFor="let note of morenotes | orderBy: 'createdAt' :true">
+  <h3>{{note.text}}</h3>
+  <h4>{{note.createdAt | date: 'medium'}}</h4>
+</div> 
