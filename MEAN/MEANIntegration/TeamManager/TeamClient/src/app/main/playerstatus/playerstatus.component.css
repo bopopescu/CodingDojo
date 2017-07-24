@@ -1,0 +1,11 @@
+.playing{
+    background: green;
+}
+
+.notplaying{
+    background: red;
+}
+
+.undecplaying{
+    background: yellow;
+}

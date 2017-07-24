@@ -1,0 +1,41 @@
+<h1>Player Status - Game {{title}}</h1>
+   <a [routerLink]="['/status/game/', 1]">Game One</a> 
+   <a [routerLink]="['/status/game/', 2]">Game Two</a>
+  <a [routerLink]="['/status/game/', 3]">Game Three</a> 
+
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>Status</th>
+  </tr>
+  <div *ngIf = "gamenumber == 1">
+  <tr *ngFor="let player of moreplayers" >
+    <td>{{player.name}}</td>
+    <td>
+      <button [ngClass]="{playing: player.gameone == 'Playing'}" (click)="updatethatPlayer(player, 'gameone', 'Playing')" >Playing</button>
+      <button [ngClass]="{notplaying: player.gameone == 'Not Playing'}"  (click)="updatethatPlayer(player, 'gameone', 'Not Playing')">Not Playing</button>
+      <button [ngClass]="{undecplaying: player.gameone == 'Undecided'}"  (click)="updatethatPlayer(player, 'gameone', 'Undecided')">Undecided</button>
+    </td>
+  </tr>
+  </div>
+  <div *ngIf = "gamenumber == 2">
+  <tr *ngFor="let player of moreplayers">
+    <td>{{player.name}}</td>
+    <td>
+      <button [ngClass]="{playing: player.gametwo == 'Playing'}" (click)="updatethatPlayer(player, 'gametwo', 'Playing')" >Playing</button>
+      <button [ngClass]="{notplaying: player.gametwo == 'Not Playing'}"  (click)="updatethatPlayer(player, 'gametwo', 'Not Playing')">Not Playing</button>
+      <button [ngClass]="{undecplaying: player.gametwo == 'Undecided'}"  (click)="updatethatPlayer(player, 'gametwo', 'Undecided')">Undecided</button>
+    </td>
+  </tr>
+  </div>
+  <div *ngIf = "gamenumber == 3">
+  <tr *ngFor="let player of moreplayers">
+    <td>{{player.name}}</td>
+    <td>
+      <button [ngClass]="{playing: player.gamethree == 'Playing'}" (click)="updatethatPlayer(player, 'gamethree', 'Playing')" >Playing</button>
+      <button [ngClass]="{notplaying: player.gamethree == 'Not Playing'}"  (click)="updatethatPlayer(player, 'gamethree', 'Not Playing')">Not Playing</button>
+      <button [ngClass]="{undecplaying: player.gamethree == 'Undecided'}"  (click)="updatethatPlayer(player, 'gamethree', 'Undecided')">Undecided</button>
+    </td>
+  </tr>
+  </div>
+</table>

@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<form (submit)="onSubmit()" #formData="ngForm">
+  <label>Player Name: </label>
+  <input type="text" name="playername"  required minlength="2" [(ngModel)]="player.name" #playername="ngModel" > 
+  <div class="red" *ngIf="playername.errors && (playername.dirty || playername.touched)">
+        <div [hidden]="!playername.errors.required">
+          Player is required
+        </div>
+        <div [hidden]="!playername.errors.minlength">
+          Note must be at least 2 characters long.
+        </div>
+  </div>  
+  <label>Player Preferred Position: </label>
+  <input type="text" name="playerpreferredposition"  [(ngModel)]="player.preferred_position" #playerpreferredposition="ngModel" >     
+  <input [disabled] = "playername.errors"  type="submit" value="Add Player">    
+</form>
