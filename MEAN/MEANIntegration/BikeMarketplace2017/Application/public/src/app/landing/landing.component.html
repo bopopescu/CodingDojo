@@ -1,0 +1,22 @@
+<h3>{{logintitle}}</h3>
+<form (submit)="LoggingIn()" #formData="ngForm"  method='post'> 
+  <!--action='/logging'-->
+  Email: <input required  type='text' name='getemail' [(ngModel)]="user.email" #getemail="ngModel">
+  <div class="red" *ngIf="getemail.errors && (getemail.dirty || getemail.touched)">
+        <div [hidden]="!getemail.errors.required">
+          Email is required
+        </div>
+  </div> 
+  Password: <input type='text' required name='getpassword' [(ngModel)]="user.password" #getpassword="ngModel">
+  <div class="red" *ngIf="getpassword.errors && (getpassword.dirty || getpassword.touched)">
+        <div [hidden]="!getpassword.errors.required">
+          Player is required
+        </div>
+  </div> 
+  <input [disabled] = "getemail.errors || getpassword.errors"  type="submit" value="Submit">
+  
+</form>
+
+<span *ngIf="errorslogin">{{errorslogin}}</span>
+
+<app-register></app-register>

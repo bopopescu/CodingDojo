@@ -1,0 +1,13 @@
+<form (submit)="Search()" #browsingformData="ngForm" method='post'>
+<input type="text" name="filter_bike"  require  [(ngModel)]="filter_bike" value="Search"> <br>
+  <input   type="submit" value="Search">
+
+</form>
+<div *ngFor="let bike of allbikes">
+  <h1>{{bike.title}}</h1>
+  <h3>{{bike.location}}</h3>
+  <h4>{{bike.description}}</h4>
+  <h2>{{bike.price}}</h2>
+  <h2>Selling By {{bike.userId}} and email is {{bike.userId}}</h2>
+  <img src="{{bike.image}}" width="200px" height="200px">
+</div>
