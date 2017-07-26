@@ -34,6 +34,7 @@ export class MainComponent implements OnInit {
   }
 
   deletingPlayer(thatplayer, index){
+    confirm("Are you sure you want to remove "+thatplayer.name);
     console.log("in main.comp.ts deleting the player")
     console.log(this.moreplayers.indexOf(thatplayer))
     this._httpService.deletingThePlayer(thatplayer, index);
