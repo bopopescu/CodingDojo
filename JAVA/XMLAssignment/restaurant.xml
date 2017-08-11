@@ -1,0 +1,75 @@
+<? xml version="1.0" encoding="UTF-8">
+
+<menu>
+    <breakfastMenu>
+        <item catergory="beverage">
+            <name>Orange Juice</name>
+            <description>Juice out of oranges</description>
+            <price>$2.99</price>
+        </item>
+        <item catergory="beverage">
+            <name>Coffee</name>
+            <description>Brewed coffee. Cream or milk or no milk at all</description>
+            <price>$1.99</price>
+        </item>  
+        <item category="entree">
+            <name>Omelette</name>
+            <description>Egg with veggies</description>
+            <price>$8.99</price>
+        </item>
+        <item category="entree">
+            <name>Cereal</name>
+            <description>A bowl of milk and cereal of any choice you want</description>
+            <price>$3.99</price>
+        </item>
+    </breakfastMenu>
+    <lunchMenu>
+        <item category="entree">
+            <name>Chicken Salad</name>
+            <description>A salad with chicken</description>
+            <price>$10.99</price>
+        </item>
+        <item category="entree">
+            <name>Chicken Sandwich</name>
+            <description>A sandwich with chicken</description>
+            <price>$12.99</price>
+        </item>
+        <item category="entree">
+            <name>Pastrami Sandwich</name>
+            <description>A sandwich made with pastrami</description>
+            <price>$13.99</price>
+        </item> 
+        <item category="beverage">
+            <name>Coca-Cola</name>
+            <description>A fizzy cola soda</description>
+            <price>$0.99</price>
+        </item>
+        <item category="beverage">
+            <name>Orange Juice</name>
+            <description>A juice made with oranges</description>
+            <price>$0.99</price>
+        </item>    
+    </lunchMenu>
+    <dinnerMenu>
+        <item catergory="beverage">
+            <name>Wine</name>
+            <description>Wine from Napa Valley</description>
+            <price>$2.99</price>
+        </item>
+        <item catergory="beverage">
+            <name>Soda</name>
+            <description>Choice ranges from Coke to Sprite</description>
+            <price>$1.99</price>
+        </item>  
+        <item category="entree">
+            <name>Burger</name>
+            <description>Double cheeseburger</description>
+            <price>$5.99</price>
+        </item>
+        <item category="entree">
+            <name>Pizza</name>
+            <description>Za</description>
+            <price>$3.99</price>
+        </item>
+    </dinnerMenu>
+</menu>

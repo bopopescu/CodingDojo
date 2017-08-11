@@ -1,0 +1,56 @@
+OOP - object oriented programming
+1) Encapsulation
+2) Inheritance
+	- EX: ninja and wizard may be type of Person ( class)
+		so basically ninja and wizard inherits from Person
+			have ability to add new methods or overwrite methods
+
+protcted -> can be passed down 
+	but instance can't 
+
+constructor that gets called when we create new instance -> new Class()
+
+WHY DO GETTER and Setters
+
+what if everytime we set energy what if we set up
+energy 
+you can do more than just setting or getting
+
+Polymorphism
+if something accepts of type of person, then it will also accepts type of ninja.
+
+private methods can be called in class but it can not be called outside class
+
+@Override -> override a method
+
+
+private int radius;
+to get string value -> String.value(radius)
+
+super.toString() => calling function from parent class
+
+------------------------------------------------------------------------------------------------------------
+
+08/02/2017
+
+-abstract
+-interface
+
+- overloading -> when you make multiple methofs with same name with different parameters
+- overwriting -> redefine a method that's in your super class (with the same parameter)
+
+Abstract
+Interface
+
+
+private static
+
+abstraction: 
+
+abstract classs: similar to regular class
+basically class that cannot be implemented itself
+cannot instantiate -> cannot make instances
+using it so later on we can ...
+
+interface: is a mini blueprint for certain set of interactions
+cats class and dog class -> has to have methods from housepets class

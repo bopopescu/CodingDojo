@@ -13,7 +13,6 @@ export class LandingComponent implements OnInit {
   logintitle = "Login!"
   registertitle = "Register!"
   user: User = new User();
-  moreusers = [];
   errorslogin = "";
   constructor(private _httpService: HttpService, private router: Router, private _route: ActivatedRoute) { }
 

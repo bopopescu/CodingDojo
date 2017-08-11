@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <display-name>SimpleServletProject</display-name>
+    <!-- Display Name is SimpleServletProject -->
+    <servlet>
+        <servlet-name>simpleServlet</servlet-name>
+        <!-- Servlet Name is simpleServlet -->
+        <servlet-class>org.codingdojo.tutorial.SimpleServlet</servlet-class>
+        <!-- Servlet class is org.codingdojo.tutorial.SimpleServlet -->
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>simpleServlet</servlet-name>
+        <url-pattern>/simpleServlet</url-pattern>
+        <!-- connects with the url that patterns with /simpleServlet -->
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>xmlServlet</servlet-name>
+        <!-- Servlet Name is xmlServlet -->
+        <servlet-class>or.codingdojo.tutorial.XmlServlet</servlet-class>
+        <!-- Servlet class is org.codingdojo.tutorial.XmlServlet -->
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>xmlServlet</servlet-name>
+        <url-pattern>/xmlServletpath</url-pattern>
+        <!-- connects with the url that patterns with /xmlServletpath -->
+    </servlet-mapping>
+    
+    <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <!-- directs to the file called index.html -->
+    </welcome-file-list>
+</web-app>

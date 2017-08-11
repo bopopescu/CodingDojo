@@ -1,0 +1,10 @@
+div{
+	border: 2px solid black;
+	padding: 1px;
+	margin: 10px;
+}
+
+.proj{
+	width: 300px;
+	display: inline-block;
+}
