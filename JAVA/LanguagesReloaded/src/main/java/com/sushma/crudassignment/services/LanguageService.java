@@ -5,10 +5,16 @@ import java.util.*;
 import org.springframework.stereotype.Service;
 
 import com.sushma.crudassignment.models.Language;
+import com.sushma.crudassignment.repositories.LanguageRepository;
 
 @Service
 public class LanguageService {
 	//initialize the language variable with values
+	private LanguageRepository languageRepository;
+	public LanguageService(LanguageRepository languageRepository) {
+		this.languageRepository = languageRepository;
+	}
+	
 	private List<Language> languages = new ArrayList<Language>(Arrays.asList(
 			new Language("Java", "James Gosling", "1.8"),
 			new Language("Python", "Guido van Rossum", "3.6"),
@@ -17,30 +23,24 @@ public class LanguageService {
 	));
 	
 	public List<Language> allLanguages(){
-		return languages;
+		return (List<Language>) languageRepository.findAll();
 	}
 
-	public Language findLanguagesByIndex(int index) {
-		if(index < languages.size()) {
-			return languages.get(index);
-		}
-		else {
-			return null;
-		}
+	public Language findLanguagesByIndex(Long index) {
+		return languageRepository.findOne(index);
 	}
 	
 	public void addLanguage(Language language) {
-		languages.add(language);
+		System.out.println("in addLanguage in service");
+		languageRepository.save(language);
 	}
 	
-	public void removeLanguage(int id) {
-		languages.remove(id);
+	public void removeLanguage(Long id) {
+		languageRepository.delete(id);
 	}
 	
-	public void updateLanguage(int index, Language language) {
-		if(index < languages.size()) {
-			languages.set(index, language);
-		}
+	public void updateLanguage(Long index, Language language) {
+		languageRepository.save(language);
 	}
 	
 

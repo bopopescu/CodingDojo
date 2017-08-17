@@ -1,5 +1,9 @@
 package com.sushma.crudassignment.repositories;
 
-public interface LanguageRepository {
+import org.springframework.data.repository.CrudRepository;
+
+import com.sushma.crudassignment.models.Language;
+
+public interface LanguageRepository extends CrudRepository<Language, Long>{
 
 }
