@@ -18,6 +18,7 @@ public class Countries {
     private String code;
     private String name;
     private String continent;
+    private String region;
     private Float surface_area;
     private Long indep_year;
     private Long population;

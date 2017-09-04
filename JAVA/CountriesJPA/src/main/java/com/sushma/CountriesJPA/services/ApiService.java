@@ -18,9 +18,39 @@ public class ApiService {
 		this.LanguageRepo = LanguageRepo;
 	}
 
-	public List<Object[]> findCountryByLanguage(String string) {
+	public List<Object[]> findCountryByLanguage() {
 		
 		return CountryRepo.findAllCountriesWLanguage();
+	}
+
+	public List<Object[]> findTotalNumberCitiesCountry() {
+		// TODO Auto-generated method stub
+		return CityRepo.findTotalCities();
+	}
+
+	public List<Object[]>  getMexicoCities() {
+		return CityRepo.getMexicoCities();
+	}
+
+	public List<Object[]> percentagegreaterthan89() {
+		return LanguageRepo.precentagegreaterthan89();
+	}
+
+	public List<Object[]>  findSAandpopulation() {
+		return CountryRepo.findSAandpopulation();
+	}
+
+	public List<Object[]> findCMlife() {
+		// TODO Auto-generated method stub
+		return CountryRepo.findCMlife();
+	}
+
+	public Object findArgentina() {
+		return CountryRepo.findArgentina();
+	}
+
+	public List<Object[]> summarizeNumberCountries() {
+		return CountryRepo.summarizeNumberCountries();
 	}
 
 }
